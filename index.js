@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const CoursTennis = require('./CoursTennis.json')
+const CoursTennis = require('./CoursTennis.json,Reservation.json')
+
 
 // Middleware
 app.use(express.json())
@@ -20,7 +21,7 @@ app.post('/CoursTennis', (req, res) => {
     res.status(200).json(CoursTennis)
     })
 
-    //put
+       //put
 app.put('/CoursTennis/:IdClass', (req, res) => {
     const IdClass = parseInt(req.params.id)
     let CourTennis = CoursTennis.find(CourTennis => CourTennis.IdClass === id)
@@ -38,5 +39,7 @@ app.delete('/CoursTennis/:id', (req, res) => {
     CoursTennis.splice(CoursTennis.indexOf(CourTennis), 1)
     res.status(200).json(CoursTennis)
     })
-    
+
+ 
+
 app.listen(8080, () => { console.log("Serveur à l'écoute") })
