@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const CoursTennis = require('./CoursTennis.json,Reservation.json')
+const CoursTennis = require('./CoursTennis.json')
 
 
 // Middleware
@@ -40,6 +40,6 @@ app.delete('/CoursTennis/:id', (req, res) => {
     res.status(200).json(CoursTennis)
     })
 
- 
+         
 
 app.listen(8080, () => { console.log("Serveur à l'écoute") })
