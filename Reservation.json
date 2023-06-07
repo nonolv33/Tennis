@@ -1,0 +1,62 @@
+[
+    {
+        "IdReserv": 121,
+        "IdClass": 1111,
+        "MemberName": "Paul",
+        "LicenseNumber": 10,
+        "MatchType":"simple",
+        "ExpectedTime": "42 minutes",
+        "Statut": "open"
+    },
+
+    {
+        "IdReserv": 122,
+        "IdClass": 2222,
+        "MemberName": "Marie",
+        "LicenseNumber": 20,
+        "MatchType":"simple",
+        "ExpectedTime": "42 minutes",
+        "Statut": "open"
+    },
+
+    {
+        "IdReserv": 123,
+        "IdClass": 2222,
+        "MemberName": "Andrea",
+        "LicenseNumber": 30,
+        "MatchType":"simple",
+        "ExpectedTime": "42 minutes",
+        "Statut": "close"
+    },
+
+    {
+        "IdReserv": 124,
+        "IdClass": 3333,
+        "MemberName": "Paul",
+        "LicenseNumber": 10,
+        "MatchType":"double",
+        "ExpectedTime": "42 minutes",
+        "Statut": "open"
+    },
+
+    {
+        "IdReserv": 125,
+        "IdClass": 4444,
+        "MemberName": "Corentin",
+        "LicenseNumber": 50,
+        "MatchType":"simple",
+        "ExpectedTime": "42 minutes ",
+        "Statut": "open"
+    },
+
+    {
+        "IdReserv": 126,
+        "IdClass": 4444,
+        "MemberName": "Marie",
+        "LicenseNumber": 20,
+        "MatchType":"double",
+        "ExpectedTime": "42 minutes ",
+        "Statut": "close"
+    }
+    
+]

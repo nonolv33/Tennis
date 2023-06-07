@@ -1,0 +1,34 @@
+[
+    {
+        "IdClass": 1111,
+        "Number": 1,
+        "SurfaceType":"TERRE_BATTUE",
+        "City": "Paris",
+        "Statut": "open"
+    },
+
+    {
+        "IdClass": 2222,
+        "Number": 2,
+        "SurfaceType":"QUICK",
+        "City": "Bordeaux",
+        "Statut": "open"
+    },
+
+    {
+        "IdClass": 3333,
+        "Number": 3,
+        "SurfaceType":"GAZON",
+        "City": "Nantes",
+        "Statut": "close"
+    },
+
+    {
+        "IdClass": 4444,
+        "Number": 4,
+        "SurfaceType":"BETON",
+        "City": "Toulouse",
+        "Statut": "close"
+    }
+    
+]
