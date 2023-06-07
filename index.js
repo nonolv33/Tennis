@@ -1,43 +1,42 @@
-const express= require('express')
-const app =express()
-const parkings = require('./parkings.json')
+const express = require('express')
+const app = express()
+const CoursTennis = require('./CoursTennis.json')
 
 // Middleware
 app.use(express.json())
 
+// Routes
+app.get('/CoursTennis', (req, res) => { res.status(200).json(CoursTennis) })
+app.get('/CoursTennis/:id', (req, res) => {
+const id = parseInt(req.params.id)
+const CourTennis = CoursTennis.find(CoursTennis => CoursTennis.IdClass === id)
+res.status(200).json(CourTennis)
+})
 
-//routes
-app.get('/parkings', (reg, res) => {res.send("Liste des parkings")})
+//post
+app.post('/CoursTennis', (req, res) => {
+    console.log(req.body) 
+    CoursTennis.push(req.body) 
+    res.status(200).json(CoursTennis)
+    })
 
-app.get('/parkings/:id', (req, res) => {
+    //put
+app.put('/CoursTennis/:IdClass', (req, res) => {
+    const IdClass = parseInt(req.params.id)
+    let CourTennis = CoursTennis.find(CourTennis => CourTennis.IdClass === id)
+    CourTennis.Number = req.body.Number,
+    CourTennis.SurfaceType = req.body.SurfaceType,
+    CourTennis.City = req.body.City,
+    CourTennis.Statut = req.body.Statut,
+    res.status(200).json(CourTennis)
+})
+
+//delete
+app.delete('/CoursTennis/:id', (req, res) => {
     const id = parseInt(req.params.id)
-    const parking = parkings.find(parking => parking.id === id)
-    res.status(200).json(parking)
+    let CourTennis = CoursTennis.find(CourTennis => CourTennis.IdClass === id)
+    CoursTennis.splice(CoursTennis.indexOf(CourTennis), 1)
+    res.status(200).json(CoursTennis)
     })
-
-app.listen(8082, () => { console.log("Serveur à la super écoute") })
-
-//... dans index.js
-app.post('/parkings', (req, res) => {
-    console.log(req.body) // Uniquement pendant la phase de dev
-    parkings.push(req.body) // Les données insérées seront passées dans le body de la
-    requête
-    res.status(200).json(parkings)
-    })
-
-    app.put('/parkings/:id', (req, res) => {
-        const id = parseInt(req.params.id)
-        let parking = parkings.find(parking => parking.id === id)
-        parking.name = req.body.name,
-        parking.city = req.body.city,
-        parking.type = req.body.type,
-        res.status(200).json(parking)
-        })
-
-    app.delete('/parkings/:id', (req, res) => {
-        const id = parseInt(req.params.id)
-        let parking = parkings.find(parking => parking.id === id)
-        parkings.splice(parkings.indexOf(parking), 1)
-        res.status(200).json(parkings)
-        })
-            
+    
+app.listen(8080, () => { console.log("Serveur à l'écoute") })
